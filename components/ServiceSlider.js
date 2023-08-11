@@ -42,26 +42,6 @@ const serviceData = [
 
 const ServiceSlider = () => {
   return (
-    // <Swiper
-    //   breakpoints={{
-    //     320: {
-    //       slidesPerView: 1,
-    //       spaceBetween: 15,
-    //     },
-    //     640: {
-    //       slidesPerView: 3,
-    //       spaceBetween: 15,
-    //     },
-    //   }}
-    //   freeMode={true}
-    //   pagination={{
-    //     clickable: true,
-    //   }}
-    //   modules={[FreeMode, Pagination]}
-    //   className="h-[240px] sm:h-[340px]"
-    // >
-    //   Service Slider
-    // </Swiper>
     <Swiper
       breakpoints={{
         320: {

@@ -29,7 +29,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            lorem20
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut non
+            odio aut ullam odit, alias culpa minus magnam sunt beatae?
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
@@ -45,7 +46,7 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
-      <div className="w-[1200px] h-full absolute right-0 bottom-0">
+      <div className="w-[1200px] h-full absolute right-0 bottom-0 pointer-events-none">
         <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
         <ParticlesContainer />
         <motion.div

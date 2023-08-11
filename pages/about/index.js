@@ -184,7 +184,7 @@ const About = () => {
                   key={itemIndex}
                   className={`${
                     index === itemIndex &&
-                    "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
+                    "text-accent after:w-[100%] after:bg-red-600 after:transition-all after:duration-300"
                   }  cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
                   onClick={() => setIndex(itemIndex)}
                 >
@@ -205,7 +205,11 @@ const About = () => {
                   <div>{item.stage}</div>
                   <div className="flex gap-x-4">
                     {item.icons?.map((icon, itemIndex) => {
-                      return <div className="text-2xl text-white">{icon}</div>;
+                      return (
+                        <div key={itemIndex} className="text-2xl text-white">
+                          {icon}
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
