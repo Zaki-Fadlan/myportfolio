@@ -125,7 +125,9 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 yeas ago ibegan ...... since ssss
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad quia
+            odio praesentium consequatur cumque. Fugit dolore vero repellat eius
+            ullam.
           </motion.p>
           <motion.div
             variants={fadeIn("right", 0.6)}
