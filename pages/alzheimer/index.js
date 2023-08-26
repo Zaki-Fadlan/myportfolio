@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import Sample from "./Sample";
 
 const Alzheimer = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [viewSample, setViewSample] = useState(false);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -50,6 +52,7 @@ const Alzheimer = () => {
       <h1 className="h1 text-xl text-center">
         Alzheimer Disease Classification using MobileNetV3
       </h1>
+
       <div className="flex w-full items-center justify-center rounded-2xl">
         <form action="#" method="POST">
           <div className="bg-primary grid grid-cols-1 space-y-2">
@@ -101,12 +104,49 @@ const Alzheimer = () => {
             Analyze
           </button>
           <div className="flex mx-auto justify-center">
-            <a href="#" className="hover:text-accent underline">
-              Sample Image
-            </a>
+            <button
+              type="button"
+              className="inline-block rounded-full bg-blue-500 hover:bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+              data-te-toggle="modal"
+              data-te-target="#exampleModalFullscreen"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              onClick={() => setViewSample(true)}
+            >
+              Image Sample
+            </button>
           </div>
         </form>
       </div>
+      {viewSample ? (
+        <>
+          <div className="justify-center items-center rounded-lg flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative w-auto my-6 mx-auto max-w-lg max-h-lg">
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                <div className="relative p-6 flex-auto">
+                  <Sample />
+                </div>
+                <div className="flex items-center justify-end border-t border-solid border-slate-200 rounded-b">
+                  <button
+                    className="bg-red-700 shadow-xl text-white active:bg-red-600 font-bold uppercase text-sm p-2 rounded hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setViewSample(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+                <a
+                  href="/alzheimer_sample/Dataset.zip"
+                  className="text-slate-700 rounded-xl text-center underline"
+                >
+                  Download sample
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="opacity-80 fixed inset-0 z-40 bg-black"></div>
+        </>
+      ) : null}
     </div>
   );
 };
